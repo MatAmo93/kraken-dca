@@ -11,7 +11,7 @@ provider:
   environment:
     API_KEY: ${param:API_KEY}
     API_SECRET: ${param:API_SECRET}
-    WALLET_ADDRESS_ETH: ${param:WALLET_ADDRESS_ETH}
+    WALLET_ADDRESS_ETH: ${param:WALLET_ADDRESS_ADA}
 
 functions:
   cron:
