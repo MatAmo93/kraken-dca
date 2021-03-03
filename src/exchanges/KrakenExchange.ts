@@ -18,14 +18,14 @@ export class KrakenExchange {
     return ticker.last;
   }
 
-  public async balance(symbol: "BTC" | "ETH" | "EUR"): Promise<number> {
+  public async balance(symbol: "BTC" | "ADA" | "EUR"): Promise<number> {
     const balance = await this.client.fetchBalance();
 
     if (symbol === "BTC" && balance.BTC) {
       return balance.BTC.total;
     }
-    if (symbol === "ETH" && balance.ETH) {
-      return balance.ETH.total;
+    if (symbol === "ADA" && balance.ADA) {
+      return balance.ADA.total;
     }
     if (symbol === "EUR" && balance.EUR) {
       return balance.EUR.total;
@@ -53,7 +53,7 @@ export class KrakenExchange {
     }
   }
 
-  public async withdraw(symbol: "BTC" | "ETH", address: string, amount?: number, walletDescription?: string) {
+  public async withdraw(symbol: "BTC" | "ADA", address: string, amount?: number, walletDescription?: string) {
     // if no amount is specified, it withdraws all available balance
     if (!amount) {
       amount = await this.balance(symbol);
