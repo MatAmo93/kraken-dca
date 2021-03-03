@@ -21,7 +21,7 @@ export const withdraw: APIGatewayProxyHandler = async () => {
   console.log("EXEC account.withdraw");
 
   const exchange = new KrakenExchange();
-  await exchange.withdraw("ETH", AppConfig.WALLET_ADDRESS_ADA, undefined, AppConfig.WALLET_DESCRIPTION_ADA);
+  await exchange.withdraw("ADA", AppConfig.WALLET_ADDRESS_ADA, undefined, AppConfig.WALLET_DESCRIPTION_ADA);
 
   const response: IHandlerResponse = {
     statusCode: 200,
